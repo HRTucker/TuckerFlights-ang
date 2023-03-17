@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+
+$midnight-green: hsla(190, 58%, 24%, 1);
+$skobeloff: hsla(177, 83%, 26%, 1);
+$dun: #EBD4CB;
+$falu-red: hsla(5, 53%, 32%, 1);
+$antiflash-white: hsla(204, 20%, 95%, 1);
+
+html{
+    background-color: $dun;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: $falu-red;
+    height: 900px;
+}
+
+header{
+    display: flex;
+
+    h1{
+        color: $falu-red;
+        background-color: white;
+        margin: 0px;
+        width:70%;
+        height: 40px;
+        @media screen and (max-width:919px){
+            height: 80px;
+        }
+
+        span{
+            padding-left:10px;
+            padding-right: 10px;
+            color: white;
+            background-color: $falu-red;
+        }
+    }
+    #nav-bar{
+        height: 40px;
+        width: 30%;
+        background-color: white;
+        @media screen and (max-width:919px){
+            height: 80px;
+        }
+    
+        button{
+            height: 30px;
+            width: 100px;
+
+            margin: 5px;
+            margin-left: 10px;
+
+            font-weight: bold;
+            color: white;
+            background-color: $falu-red;
+            border-radius: 5px;
+        }
+    }
+}
+
+.flights-element{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+    border: 5px solid $antiflash-white;
+    background-color: white;
+
+    width: 800px;
+    @media screen and (max-width:750px) {
+        width:100%
+    }
+
+    .flights-table{
+        width: 100%;
+        border: 3px solid $falu-red;
+
+        .flight-result{    
+            background-color: $antiflash-white;
+            
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 10px;
+        
+            width: 92.5%;
+        }
+    }
+}
+
+.flight-searchbar{
+    display: flex;
+    h3{
+        margin: 6px;
+        margin-left: 10px;
+    }
+    select,button{
+        height: 30px;
+            width: 100px;
+
+            margin: 5px;
+            margin-left: 10px;
+
+            font-weight: bold;
+            
+            background-color: $antiflash-white;
+            border-radius: 5px;
+    }
+    button{
+        color: white;
+        background-color: $falu-red;
+    }
+}

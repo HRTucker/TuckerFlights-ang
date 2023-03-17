@@ -1,4 +1,6 @@
+import { getLocaleDateFormat } from '@angular/common';
 import { Component } from '@angular/core';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tut-ang';
+
+  currentDate = new Date();
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FlightsService } from '../flights.service';
+import { Flight } from '../flights.model';
+import { FlightsService} from '../flights.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,14 @@ import { FlightsService } from '../flights.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  flights: Flight[] = this.flightsService.getFlights();
 
-  constructor(private flightsService: FlightsService) {}
+  constructor(private flightsService: FlightsService) {
+    
+  }
 
   ngOnInit(): void {
-    
+
   }
 
   getFlights(): void{

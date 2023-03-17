@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div class="flights-element">
+    <div class="flight-searchbar">
+        <h3>Find Your Next Adventure :</h3>
+        <div class="select-box">
+            <select>
+                <option value="" disabled selected>from</option>
+                <option value="london">London</option>
+                <option value="birmingham">Birmingham</option>
+                <option value="coventry">Coventry</option>
+            </select>
+        </div>
+        <div class="select-box">
+            <select>
+                <option value="" disabled selected>to</option>
+                <option value="berlin">Berlin</option>
+                <option value="vienna">Vienna</option>
+                <option value="paris">Paris</option>
+            </select>
+        </div>
+        <button>Search</button>
+    </div>
+
+    <table class="flights-table">
+        <tr class="flight-result">
+            <th>Flight #</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Nonstop</th>
+        </tr>
+        <tr class="flight-result" *ngFor="let flight of flights">
+            <td class="flight-number">{{flight.flightNumber}}</td>
+            <td class="departure">{{flight.departure | date : 'd/M/y'}}</td>
+            <td class="arrival">{{flight.arrival | date : 'd/M/y'}}</td>
+            <td class="nonstop">{{flight.nonstop}}</td>
+        </tr>
+    </table>
+</div>
