@@ -2,22 +2,18 @@
     <div class="flight-searchbar">
         <h3>Find Your Next Adventure :</h3>
         <div class="select-box">
-            <select>
+            <select [(ngModel)]="selectedOrigin">
                 <option value="" disabled selected>from</option>
-                <option value="london">London</option>
-                <option value="birmingham">Birmingham</option>
-                <option value="coventry">Coventry</option>
+                <option *ngFor="let orig of originList; let i=index" value="{{orig.origin}}">{{capFirst(orig.origin)}}</option> 
             </select>
         </div>
         <div class="select-box">
-            <select>
+            <select [(ngModel)]="selectedDestination">
                 <option value="" disabled selected>to</option>
-                <option value="berlin">Berlin</option>
-                <option value="vienna">Vienna</option>
-                <option value="paris">Paris</option>
+                <option *ngFor="let dest of destinationList; let i=index" value="{{dest.destination}}">{{capFirst(dest.destination)}}</option> 
             </select>
         </div>
-        <button>Search</button>
+        <button (click)="query()">Search</button>
     </div>
 
     <table class="flights-table">

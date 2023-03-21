@@ -1,1 +1,56 @@
-<p>admin works!</p>
+<div class="flights-element">
+    <h2>Welcome to the Admin Page</h2>
+    <div class="create-flight-element">
+        <h3>Add a Flight</h3>
+        <table class="create-flight-table">
+            <tr>
+                <td><label><b>Flight Number: </b></label></td>
+                <td><input type="text" [(ngModel)]="flightNumber" placeholder="#"></td>
+            </tr>
+            <tr>
+                <td><label><b>Origin: </b></label></td>
+                <td><input type="text" [(ngModel)]="origin" placeholder="city name"></td>
+            </tr>
+            <tr>
+                <td><label><b>Destination: </b></label></td>
+                <td><input type="text" [(ngModel)]="destination" placeholder="city name"></td>
+            </tr>
+            <tr>
+                <td><label><b>Departure Date: </b></label></td>
+                <td><input type="date" [(ngModel)]="departure"></td>
+            </tr>
+            <tr>
+                <td><label><b>Arrival Date: </b></label></td>
+                <td><input type="date" [(ngModel)]="arrival"></td>
+            </tr>
+            <tr>
+                <td><label><b>No Stops: </b></label></td>
+                <td>Yes<input type="radio" (click)="toggleNonStop()"></td>
+            </tr>
+        </table>
+        <button class="button-style" (click)="sendFlight()">Create Flight</button>
+    </div>
+
+    <table class="flights-table">
+        <tr class="flight-result">
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Flight #</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Nonstop</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr class="flight-result" *ngFor="let flight of flightList">
+            <td>{{flight.origin}}</td>
+            <td>{{flight.destination}}</td>
+            <td class="flight-number">{{flight.flightNumber}}</td>
+            <td class="departure">{{flight.departure | date : 'd/M/y'}}</td>
+            <td class="arrival">{{flight.arrival | date : 'd/M/y'}}</td>
+            <td class="nonstop">{{flight.nonstop}}</td>
+            <td><button class="button-style">UPDATE</button></td>
+            <td><button class="button-style">DELETE</button></td>
+        </tr>
+    </table>
+</div>

@@ -6,6 +6,33 @@ $dun: #EBD4CB;
 $falu-red: hsla(5, 53%, 32%, 1);
 $antiflash-white: hsla(204, 20%, 95%, 1);
 
+.flightresult{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button-style{
+    height: 30px;
+    width: 100px;
+
+    margin: 5px;
+    margin-left: 10px;
+
+    font-weight: bold;
+    color: white;
+    background-color: $falu-red;
+    border-radius: 5px;
+}
+
+.create-flight-element{
+    background-color: $antiflash-white;
+
+    .create-flight-table tr td:nth-child(1){
+        text-align: right;
+    }
+}
+
 html{
     background-color: $dun;
     color: black;
@@ -76,6 +103,7 @@ header{
     .flights-table{
         width: 100%;
         border: 3px solid $falu-red;
+        text-align: center;
 
         .flight-result{    
             background-color: $antiflash-white;
@@ -83,9 +111,12 @@ header{
             margin-top: 10px;
             margin-bottom: 10px;
             margin-left: 10px;
-            padding: 10px;
+            padding: 5px;
         
             width: 92.5%;
+        }
+        td{
+            padding: 10px;    
         }
     }
 }
