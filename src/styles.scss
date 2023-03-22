@@ -25,8 +25,16 @@ $antiflash-white: hsla(204, 20%, 95%, 1);
     border-radius: 5px;
 }
 
+#admin-title{
+    margin-left: 20px;
+}
+
 .create-flight-element{
     background-color: $antiflash-white;
+
+    h3{
+        margin-left: 5px;
+    }
 
     .create-flight-table tr td:nth-child(1){
         text-align: right;

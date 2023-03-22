@@ -18,10 +18,10 @@ export class FlightsService {
   ];
   */
   
-  backEndURL: string;
+  domainName: string;
 
   constructor(private http: HttpClient) { 
-    this.backEndURL = this.getBackEndURL();
+    this.domainName = this.getBackEndURL();
   }
 
   /*
@@ -31,42 +31,43 @@ export class FlightsService {
 
   //Get a list of all flights
   getAllFlights(): Observable<any> {
-    return this.http.get(`${this.backEndURL}/flights`)
+    return this.http.get(`${this.domainName}/flights`)
   }
 
   //Get all flights with the desired origin and destination
   getFlights(orig: string, dest: string): Observable<any> {
-    return this.http.get(`http://localhost:3000/flights/query/${orig}/${dest}`);
+    return this.http.get(`${this.domainName}/flights/query/${orig}/${dest}`);
   }
 
   //Send a new flight listing to be stored in the back-end
   postNewFlight(flight: Flight){
-    return this.http.post(`http://localhost:3000/flights`, flight).subscribe(data => {
+    return this.http.post(`${this.domainName}/flights`, flight).subscribe(data => {
       console.log("New Flight Posted to Server");
     })
   }
 
   //Send an updated version of a flight, flight indicated by unique id and updated flight information sent via @Patch body to the back-end
   updateFlight(flight: Flight){
-    return this.http.patch(`${this.backEndURL}/flights/${flight.id}/update`, flight);
+    return this.http.patch(`${this.domainName}/flights/${flight.id}/update`, flight);
   }
 
   //Request the deletion of a flight, indication only by its unique id
   deleteFlight(flight: Flight){
-    return this.http.delete(`${this.backEndURL}/flights/${flight.id}/delete`);
+    return this.http.delete(`${this.domainName}/flights/${flight.id}/delete`);
   }
 
   getOrigins(): Observable<any> {
-    return this.http.get(`${this.backEndURL}/flights/cities/origins`)
+    return this.http.get(`${this.domainName}/flights/cities/origins`)
   }
 
   getDestinations(): Observable<any>{
-    return this.http.get(`${this.backEndURL}/flights/cities/destinations`);
+    return this.http.get(`${this.domainName}/flights/cities/destinations`);
   }
 
   getBackEndURL(): string {
-    const segements = document.URL.split('/');
+    const segements = document.URL.split('/',4);
+    console.log(`${segements[0]}/${segements[2]}`);
     const reggie = new RegExp(/localhost/);
-    return reggie.test(segements[2]) ? 'http://localhost:3000' : 'https://nestjs-typeorm-postgres.herokuapp.com';
+    return reggie.test(segements[2]) ? 'http://localhost:3000' : 'http://192.168.4.28:3000';
   }
 }
