@@ -28,7 +28,7 @@
                 <td>Yes<input type="radio" (click)="toggleNonStop()"></td>
             </tr>
         </table>
-        <button class="button-style" (click)="sendFlight()">Create Flight</button>
+        <button class="btn-style" (click)="sendFlight()">Create Flight</button>
     </div>
 
     <table class="flights-table">
@@ -43,14 +43,14 @@
             <th>Delete</th>
         </tr>
         <tr class="flight-result" *ngFor="let flight of flightList">
-            <td>{{flight.origin}}</td>
-            <td>{{flight.destination}}</td>
+            <td><input [(ngModel)]='flight.origin'></td>
+            <td><input [(ngModel)]='flight.destination'></td>
             <td class="flight-number">{{flight.flightNumber}}</td>
             <td class="departure">{{flight.departure | date : 'd/M/y'}}</td>
             <td class="arrival">{{flight.arrival | date : 'd/M/y'}}</td>
             <td class="nonstop">{{flight.nonstop}}</td>
-            <td><button class="button-style">UPDATE</button></td>
-            <td><button class="button-style">DELETE</button></td>
+            <td><button class="btn-style" (click)="updateFlight(flight)">UPDATE</button></td>
+            <td><button class="btn-style" (click)="deleteFlight(flight)">DELETE</button></td>
         </tr>
     </table>
 </div>

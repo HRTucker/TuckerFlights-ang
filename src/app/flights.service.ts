@@ -29,22 +29,31 @@ export class FlightsService {
     return this.http.get('http://localhost:3000/flights/');
   }*/
 
+  //Get a list of all flights
   getAllFlights(): Observable<any> {
     return this.http.get(`${this.backEndURL}/flights`)
   }
 
+  //Get all flights with the desired origin and destination
   getFlights(orig: string, dest: string): Observable<any> {
     return this.http.get(`http://localhost:3000/flights/query/${orig}/${dest}`);
   }
 
-  postFlight(flight: Flight){
+  //Send a new flight listing to be stored in the back-end
+  postNewFlight(flight: Flight){
     return this.http.post(`http://localhost:3000/flights`, flight).subscribe(data => {
       console.log("New Flight Posted to Server");
     })
   }
 
-  deleteFlight(id: number){
+  //Send an updated version of a flight, flight indicated by unique id and updated flight information sent via @Patch body to the back-end
+  updateFlight(flight: Flight){
+    return this.http.patch(`${this.backEndURL}/flights/${flight.id}/update`, flight);
+  }
 
+  //Request the deletion of a flight, indication only by its unique id
+  deleteFlight(flight: Flight){
+    return this.http.delete(`${this.backEndURL}/flights/${flight.id}/delete`);
   }
 
   getOrigins(): Observable<any> {

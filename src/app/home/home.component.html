@@ -6,6 +6,7 @@
                 <option value="" disabled selected>from</option>
                 <option *ngFor="let orig of originList; let i=index" value="{{orig.origin}}">{{capFirst(orig.origin)}}</option> 
             </select>
+            <b> ></b>
         </div>
         <div class="select-box">
             <select [(ngModel)]="selectedDestination">
