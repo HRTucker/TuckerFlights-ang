@@ -1,27 +1,8 @@
-# TutAng
+# TuckerFlights-ang
+<p>This angular application served as a study for create Single-Page-Applications with more scalability and as an environment to develop my proficientcy in writing TypeScript.</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h3> Here's a preview of the UI: </h2>
+<div style="display: flex">
+  <img src="https://gyazo.com/b38f86bff9b85ba0cbf762fc2f3b66e3.png" width="45%">
+  <img src="https://gyazo.com/32d3afcbd362ff511093070915b4b1a2.png" width="45%">
+ </div>
