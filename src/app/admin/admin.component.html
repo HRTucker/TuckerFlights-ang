@@ -1,35 +1,39 @@
 <div class="flights-element">
     <h2 id="admin-title">Welcome to the Admin Page</h2>
-    <div class="create-flight-element">
-        <h3>Add a Flight</h3>
-        <table class="create-flight-table">
-            <tr>
-                <td><label><b>Flight Number: </b></label></td>
-                <td><input type="text" [(ngModel)]="flightNumber" placeholder="#"></td>
-            </tr>
-            <tr>
-                <td><label><b>Origin: </b></label></td>
-                <td><input type="text" [(ngModel)]="origin" placeholder="city name"></td>
-            </tr>
-            <tr>
-                <td><label><b>Destination: </b></label></td>
-                <td><input type="text" [(ngModel)]="destination" placeholder="city name"></td>
-            </tr>
-            <tr>
-                <td><label><b>Departure Date: </b></label></td>
-                <td><input type="date" [(ngModel)]="departure"></td>
-            </tr>
-            <tr>
-                <td><label><b>Arrival Date: </b></label></td>
-                <td><input type="date" [(ngModel)]="arrival"></td>
-            </tr>
-            <tr>
-                <td><label><b>No Stops: </b></label></td>
-                <td>Yes<input type="radio" (click)="toggleNonStop()"></td>
-            </tr>
-        </table>
-        <button class="btn-style" (click)="sendFlight()">Create Flight</button>
-    </div>
+    <details>
+        <summary><b>Click Here to Create a Flight</b></summary>
+        <div class="create-flight-element">
+            <h3>Add a Flight</h3>
+            <table class="create-flight-table">
+                <tr>
+                    <td><label><b>Flight Number: </b></label></td>
+                    <td><input type="text" [(ngModel)]="flightNumber" placeholder="#"></td>
+                </tr>
+                <tr>
+                    <td><label><b>Origin: </b></label></td>
+                    <td><input type="text" [(ngModel)]="origin" placeholder="city name"></td>
+                </tr>
+                <tr>
+                    <td><label><b>Destination: </b></label></td>
+                    <td><input type="text" [(ngModel)]="destination" placeholder="city name"></td>
+                </tr>
+                <tr>
+                    <td><label><b>Departure Date: </b></label></td>
+                    <td><input type="date" [(ngModel)]="departure"></td>
+                </tr>
+                <tr>
+                    <td><label><b>Arrival Date: </b></label></td>
+                    <td><input type="date" [(ngModel)]="arrival"></td>
+                </tr>
+                <tr>
+                    <td><label><b>No Stops: </b></label></td>
+                    <td>Yes<input type="radio" (click)="toggleNonStop()"></td>
+                </tr>
+            </table>
+            <button class="btn-style" (click)="sendFlight()">Create Flight</button>
+        </div>
+    </details>
+    <br>
 
     <table class="flights-table">
         <tr class="flight-result">
