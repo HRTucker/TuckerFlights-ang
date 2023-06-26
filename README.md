@@ -1,5 +1,5 @@
 # TuckerFlights-ang
-<p>This angular application served as a study for create Single-Page-Applications with more scalability and as an environment to develop my proficientcy in writing TypeScript.</p>
+<p>This angular application served as a study in creating Single-Page-Applications with more scalability in-mind and as an environment to develop my proficientcy in writing TypeScript.</p>
 
 <h3> Here's a preview of the UI: </h2>
 <div style="display: flex">
